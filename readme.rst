@@ -61,21 +61,20 @@ Install django-geojson::
     $ pip install django-geojson
 
 
-add in local_settings.py this minimal leaflet configuration :
-.. sourcecode::
+add in local_settings.py this minimal leaflet configuration::
 
    LEAFLET_CONFIG = {
     'SPATIAL_EXTENT': (4.52, 46.96, 19.90, 37.21), #Italy extent
     'RESET_VIEW': False,
    }
 
-and in settings.py:
-.. sourcecode::
+and in settings.py::
 
    INSTALLED_APPS += (
      'leaflet',
      'djgeojson',
    )
+
 
 
 
