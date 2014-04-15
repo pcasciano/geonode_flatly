@@ -94,3 +94,14 @@ MAP_BASELAYERS = [{
 
 # For more information on available settings please consult the Django docs at
 # https://docs.djangoproject.com/en/dev/ref/settings
+
+
+LEAFLET_CONFIG = {
+    # conf here
+    'SPATIAL_EXTENT': (4.52, 46.96, 19.90, 37.21), #Italy extents
+    #'TILES': 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    #'DEFAULT_CENTER': (6.0, 45.0),
+    #'DEFAULT_ZOOM': 16,
+    #'MINIMAP': True,
+    'RESET_VIEW': False,
+}

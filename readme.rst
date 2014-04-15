@@ -1,5 +1,5 @@
-Geonode 2.0  installation on ubuntu server 12.10
-------------------------------------------------
+Geonode 2.0  installation on ubuntu server 12.10 with Leaflet
+=============================================================
 
 Note: all of these instructions are done with an user (user) that has this configuration in
 /etc/sudoers:
@@ -45,6 +45,45 @@ Set ip address and create a super user::
 
 
 Now geonode is running and accessible at http://localhost
+
+
+
+Leaflet integration
+-------------------
+
+
+Install django-leaflet::
+
+  $ pip install django-leaflet
+
+Install django-geojson::
+
+    $ pip install django-geojson
+
+
+add in local_settings.py this minimal leaflet configuration :
+.. sourcecode::
+
+   LEAFLET_CONFIG = {
+    'SPATIAL_EXTENT': (4.52, 46.96, 19.90, 37.21), #Italy extent
+    'RESET_VIEW': False,
+}
+
+and in settings.py:
+.. sourcecode::
+   INSTALLED_APPS += (
+     'leaflet',
+     'djgeojson',
+   )
+
+
+
+
+
+
+
+
+
 
 
 Create a custom project

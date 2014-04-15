@@ -27,6 +27,11 @@ from geonode.settings import *
 
 SITENAME = 'my_geonode'
 
+INSTALLED_APPS += (
+    'djgeojson',
+    'leaflet',
+)
+
 # Defines the directory that contains the settings file as the LOCAL_ROOT
 # It is used for relative settings elsewhere.
 LOCAL_ROOT = os.path.abspath(os.path.dirname(__file__))
