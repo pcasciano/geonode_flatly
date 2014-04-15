@@ -1,6 +1,7 @@
 Geonode 2.0  installation on ubuntu server 12.10
+------------------------------------------------
 
-All of these instructions are done with an user (user) that have this configuration in
+Note: all of these instructions are done with an user (user) that has this configuration in
 /etc/sudoers:
 
 user ALL=(ALL:ALL) ALL
@@ -14,12 +15,12 @@ Install geonode with::
    $ sudo add-apt-repository ppa:geonode/release
 
 
-if don't have add-apt-repository install it with::
+if don't have add-apt-repository command install it with::
 
    $ sudo apt-get install software-properties-common
 
 
-Repository is for Ubuntu 12.04!
+This repository is for Ubuntu 12.04!
 To allow installation on Ubuntu 12.10 you must edit /etc/apt/sources.list.d/geonode-release-quantal.list
 and change "quantal" word with "precise"
 
