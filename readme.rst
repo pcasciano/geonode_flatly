@@ -71,6 +71,7 @@ add in local_settings.py this minimal leaflet configuration :
 
 and in settings.py:
 .. sourcecode::
+
    INSTALLED_APPS += (
      'leaflet',
      'djgeojson',
