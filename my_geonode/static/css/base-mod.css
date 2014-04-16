@@ -22,9 +22,17 @@
  *  Work: Lead Product Designer @ Kyruus - http://kyruus.com
  */ 
  
- 
 img{
  max-width: 100px;
+}
+
+
+.sign-in label{
+  color: white;
+}
+
+.sign-in{
+  padding:8px;
 }
 
 .user-avatar{
