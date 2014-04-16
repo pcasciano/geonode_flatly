@@ -69,6 +69,10 @@ Create a custom project (my_geonode) from geonode project template::
 
   $ django-admin startproject my_geonode --template=https://github.com/GeoNode/geonode_flatly/archive/master.zip -epy,rst
 
+  $ cd my_geonode
+
+  $ python manage.py syncdb
+
 
 Edit /etc/apache2/sites-available/geonode
 
