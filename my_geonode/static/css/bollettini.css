@@ -1,0 +1,108 @@
+/*override leaflet popup */
+
+.leaflet-popup-content-wrapper{      
+      border-radius: 0px;
+     /* padding: 0px 0px 1px 0px;*/
+    }
+
+.leaflet-popup-content{
+    margin: 1px;
+}
+
+.leaflet-popup-tip {
+	background: white;
+    }
+    
+.leaflet-container {
+    	margin: 0 auto;
+        width:  700px;
+        height: 600px;
+    }
+
+.leaflet-container a.leaflet-popup-close-button {
+    color:black;
+    font: 20px/14px Tahoma, Verdana, sans-serif;
+    text-align: right;
+    
+    }
+
+
+/*popup contents*/
+
+.popup_box{
+    border: 2px solid grey;
+}
+
+.popup_header{
+    width: 290px;
+    height:70px;    
+}
+
+.popup_header img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin:2px;
+    
+    
+}
+
+.popup_header_text{
+    height:50px;
+    width:136px;
+    font-size:14px;
+    position: absolute;
+    left:65px;
+    font-weight:normal;
+    font-size:small;
+    margin-top:2px;
+    
+}
+
+.popup_danger_text{
+  font-size:medium;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.popup_header_trend{
+    width:40px;
+    height:40px;
+    position:absolute;
+    left:236px; 
+    margin-top:16px;
+  
+}
+
+.popup_header_trend img{
+    width:40px;
+    height:40px;
+   
+    
+}
+
+.popup_note{
+    margin:2px;
+    width:286px;
+    height:auto;
+    word-wrap: break-word;
+}
+
+
+.danger_legend_map table{
+    width:700px;
+}
+.danger_legend_map table td, .popup_legend td{
+    width: 20%;
+    
+    text-align:center;
+}
+
+.popup_legend{
+	width:290px;
+}
+
+.popup_legend td{
+    margin: 0px 1px;
+    font-size:10px;
+    }

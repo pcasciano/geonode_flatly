@@ -1,0 +1,45 @@
+{% extends "site_base.html" %}
+{% load leaflet_tags %}
+{% block extra_head %}
+<link href="{{ STATIC_URL }}css/leaflet.css" rel="stylesheet"/>
+{% leaflet_js %}
+{% leaflet_css %}
+<link href="{{ STATIC_URL }}css/bollettini.css" rel="stylesheet"/>
+{% endblock %}
+{% block body_class %}bollettini{% endblock %}
+{% block body_outer %}
+
+<div class="span3">
+  <div class="well">
+    <h2>Bollettini</h2>
+
+    <section class="article-list latest-maps">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="oggi">oggi</a></li>
+        <li><a href="domani">domani</a></li>
+        <li><a href="dopodomani">dopodomani</a></li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+
+
+<div class="span9">
+  {% leaflet_map "map" callback="loadGeoJSON"  %}
+  <div class="danger_legend_map"><table border=1>
+      <tr><td colspan="6" style="text-align:left;">Legenda dei valori di pericolo</td></tr><tr>
+      <td style="background-color:#CBFE65">1<br>DEBOLE</td>
+      <td style="background-color:#FEFE00">2<br>MODERATO</td>
+      <td style="background-color:#FE9800">3<br>MARCATO</td>
+      <td style="background-color:#FE0000">4<br>FORTE</td>
+      <td style="background-color:#FE0000">4<br>MOLTO FORTE</td>
+  </tr>
+  </table></div>
+</div>
+
+
+{% endblock %}
+{% block extra_script %}
+<script src="{{ STATIC_URL }}js/bollettini.js" type="text/javascript"></script>
+{% endblock extra_script %}

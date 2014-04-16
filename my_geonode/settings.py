@@ -30,7 +30,10 @@ SITENAME = 'my_geonode'
 INSTALLED_APPS += (
     'djgeojson',
     'leaflet',
+    'bollettini',
 )
+
+DATABASE_ROUTERS =['bollettini.router.BollettiniRouter']
 
 # Defines the directory that contains the settings file as the LOCAL_ROOT
 # It is used for relative settings elsewhere.

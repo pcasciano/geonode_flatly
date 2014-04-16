@@ -1,5 +1,35 @@
 # -*- coding: utf-8 -*-
+DATABASES = {
+    'default': {
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'geonode',
+         'USER': 'geonode',
+         'PASSWORD': 'geonode',
+        'HOST' : 'localhost',
+        'PORT' : '5432',
+     },
+    # vector datastore for uploads
+    'datastore' : {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        #'ENGINE': '', # Empty ENGINE name disables 
+        'NAME': 'geonode-imports',
+        'USER' : 'geonode',
+        'PASSWORD' : 'geonode',
+        'HOST' : 'localhost',
+        'PORT' : '5432',
+    },
+    #    
+    'gisdata': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'bollettino',                      # Or path to database file if using sqlite3.
+        'USER': 'geonode',
+        'PASSWORD': 'geonode',
+        'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '5432',                      # Set to empty string for default.
+    }    
 
+}
+    
 DEBUG = TEMPLATE_DEBUG = True
 
 DEBUG_STATIC = False

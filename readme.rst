@@ -6,7 +6,6 @@ Note: all of these instructions are done with an user (user) that has this confi
 
 user ALL=(ALL:ALL) ALL
 
-
 Installation
 ------------
 
@@ -47,7 +46,6 @@ Set ip address and create a super user::
 Now geonode is running and accessible at http://localhost
 
 
-
 Leaflet integration
 -------------------
 
@@ -58,31 +56,7 @@ Install django-leaflet::
 
 Install django-geojson::
 
-    $ pip install django-geojson
-
-
-add in local_settings.py this minimal leaflet configuration::
-
-   LEAFLET_CONFIG = {
-    'SPATIAL_EXTENT': (4.52, 46.96, 19.90, 37.21), #Italy extent
-    'RESET_VIEW': False,
-   }
-
-and in settings.py::
-
-   INSTALLED_APPS += (
-     'leaflet',
-     'djgeojson',
-   )
-
-
-
-
-
-
-
-
-
+  $ pip install django-geojson
 
 
 
@@ -93,11 +67,7 @@ Create a custom project (my_geonode) from geonode project template::
 
   $ cd /home/user/
 
-  $ django-admin startproject my_geonode --template=https://github.com/GeoNode/geonode-project/archive/master.zip -epy,rst
-
-  $ sudo pip install my_geonode
-
-  $ mv my_geonode/my_geonode/local_settings.py.sample my_geonode/my_geonode/local_settings.py
+  $ django-admin startproject my_geonode --template=https://github.com/GeoNode/geonode_flatly/archive/master.zip -epy,rst
 
 
 Edit /etc/apache2/sites-available/geonode
@@ -115,11 +85,7 @@ Now you have a custom geonode project running at http://localhost
 Look and Feel Customization
 ---------------------------
 
-Delete all my_geonode/static contents
-Copy BLOCKS/assets/* in my_geonode/static
-
-Change templates
-
-apply with::
+Bootswatch flatly theme is already configured, but if you modify something
+in /my_genode/static dir, do not forget to apply changes with::
 
   $ python manage.py collectstatic

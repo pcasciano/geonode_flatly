@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
     {% block head %}
-	 <link href="http://bootswatch.com/2/flatly/bootstrap.min.css" rel="stylesheet" /> 
-  
+	 <link href="http://bootswatch.com/2/flatly/bootstrap.min.css" rel="stylesheet" />
+
       <!-- <link href="{{ STATIC_URL }}css/base-without-bootstrap.css" rel="stylesheet" /> -->
-      <link href="{{ STATIC_URL }}css/base-mod.css" rel="stylesheet" /> 
+      <link href="{{ STATIC_URL }}css/base-mod.css" rel="stylesheet" />
 
      <!-- <link href="{{ STATIC_URL }}geonode/css/base.css" rel="stylesheet" /> -->
 
@@ -34,14 +34,14 @@
         <section>
 
         <div class="container" style="width: auto;" >
-           
+
 
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-      
+
 <a href="{% url "home" %}"><span class="nav-logo"></span></a>
 
         <div class="nav-collapse">
@@ -56,29 +56,34 @@
               {% if '/layers/' in request.path %}
 			  class="active"
 		      {% endif %}
-              ><a href="{% url "layer_browse" %}">{% trans "Layers" %}</a></li>             
+              ><a href="{% url "layer_browse" %}">{% trans "Layers" %}</a></li>
             <li
 	          {% if '/maps/' in request.path%}
 			  class="active"
-		      {% endif %}            
+		      {% endif %}
             ><a href="{% url "maps_browse" %}">{% trans "Maps" %}</a></li>
 	    {% if USE_DOCUMENTS %}
 	            <li
 	          {% if '/documents/' in request.path %}
 			  class="active"
-		      {% endif %} 
+		      {% endif %}
 	            ><a href="{% url "documents_browse" %}">{% trans "Documents" %}</a></li>
             {% endif %}
 	    <li
 	        {% if '/people/' in request.path %}
 			  class="active"
-		      {% endif %} 
+		      {% endif %}
 	    ><a href="{% url "profile_browse" %}">{% trans "People" %}</a></li>
 	    <li
 	        {% if '/search/' in request.path %}
 			  class="active"
-		      {% endif %} 
+		      {% endif %}
 	    ><a href="{% url "advanced_search" %}">{% trans "Search" %}</a></li>
+             <li
+	        {% if '/bollettini/' in request.path %}
+			  class="active"
+		      {% endif %}
+	    ><a href="/bollettini">{% trans "Bollettini" %}</a></li>
           </ul>
 
 <div class="nav-collapse pull-right">
@@ -109,7 +114,7 @@
                           <li class="divider"></li>
                           <li><a href="{% url "account_logout" %}"><i class="icon-off"></i> {% trans "Log out" %}</a></li>
                         </ul>
-                      </li> <!-- ./dropdown user -->                      
+                      </li> <!-- ./dropdown user -->
                       <li class="actions">
                         <!--a href="#" rel="tooltip" title="{% trans 'Notifications' %}"><i class="icon-bullhorn"></i></a>
                         <a href="#" rel="tooltip" title="{% trans 'Messages' %}"><i class="icon-envelope"></i></a-->
@@ -157,7 +162,7 @@
 
 
         </div><!-- /.nav-collapse -->
-      		
+
 	  </div>
         </section>
       </div> <!-- /.navbar-inner -->
@@ -193,7 +198,7 @@
       </div> <!-- /.container -->
     </div>
     {% endblock middle %}
-    
+
     {% block footer %}
     <footer class="footer">
       <div class="container">
@@ -221,7 +226,7 @@
       </div> <!-- /.container -->
     </footer>
     {% endblock footer %}
-    
+
     {% if DEBUG_STATIC %}
     <script src="{{ STATIC_URL }}lib/js/jquery.js"></script>
     <script src="{{ STATIC_URL }}lib/js/jquery.dataTables.js"></script>
@@ -243,7 +248,7 @@
       $("#search").select2({
         minimumInputLength: 1,
         placeholder: 'Search...',
-        width: 'element',     
+        width: 'element',
         ajax: {
           url: '{% url "search_api" %}',
           data: function(term,page){
@@ -264,14 +269,14 @@
               }),
               more: more
             }
-          }          
+          }
         },
-        createSearchChoice:function(term, data) { 
+        createSearchChoice:function(term, data) {
             term = term.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
-            if ($(data).filter(function() { 
+            if ($(data).filter(function() {
                 return this.text.localeCompare(term)===0; }).length===0) {
                     return {id:term, text:term};
-                    } 
+                    }
         },
         formatSelection: function(item){
           if(item.url != undefined) {
