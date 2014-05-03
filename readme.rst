@@ -40,7 +40,7 @@ Set ip address and create a super user::
 
   $ geonode createsuperuser
 
-(example: user: geonode, pwd: geo)
+(example: user: geonode, pwd: geonode)
 
 
 Now geonode is running and accessible at http://localhost
@@ -52,24 +52,24 @@ Leaflet integration
 
 Install django-leaflet::
 
-  $ pip install django-leaflet
+  $ sudo pip install django-leaflet
 
 Install django-geojson::
 
-  $ pip install django-geojson
+  $ sudo pip install django-geojson
 
 
 
 Create a custom project
 -----------------------
 
-Create a custom project (my_geonode) from geonode project template::
+Create a custom project (geonode_flatly) from geonode project template::
 
   $ cd /home/user/
 
-  $ django-admin startproject my_geonode --template=https://github.com/GeoNode/geonode_flatly/archive/master.zip -epy,rst
+  $ django-admin startproject geonode_flatly --template=https://github.com/pcasciano/geonode_flatly/archive/master.zip -epy,rst
 
-  $ cd my_geonode
+  $ cd geonode_flatly
 
   $ python manage.py syncdb
 
@@ -77,7 +77,7 @@ Create a custom project (my_geonode) from geonode project template::
 Edit /etc/apache2/sites-available/geonode
 
 and change WSGIScriptAlias / /var/www/geonode/wsgi/geonode.wsgi
-to WSGIScriptAlias / /home/user/my_geonode/my_geonode/wsgi.py
+to WSGIScriptAlias / /home/user/geonode_flatly/my_geonode/wsgi.py
 
 and restart apache server::
 
